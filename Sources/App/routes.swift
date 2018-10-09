@@ -1,4 +1,5 @@
 import Vapor
+import Foundation
 
 /// Register your application's routes here.
 public func routes(_ router: Router) throws {
@@ -11,6 +12,20 @@ public func routes(_ router: Router) throws {
     router.get("hello") { req in
         return "Hello, world!"
     }
+    
+    let dateClosure: (Request) -> String = {
+        
+        _ in
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-DD HH:mm:SS aa"
+        
+        let date = Date()
+        
+        return dateFormatter.string(from: date)
+    }
+    
+    router.get("date", use: dateClosure)
 
     // Example of configuring a controller
     let todoController = TodoController()
