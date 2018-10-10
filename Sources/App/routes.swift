@@ -18,7 +18,10 @@ public func routes(_ router: Router) throws
         
         _ in
         
+        let timeZone = TimeZone.CST
+        
         let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = timeZone
         dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:SS aa"
         
         let date = Date()
