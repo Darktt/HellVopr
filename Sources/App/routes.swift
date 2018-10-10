@@ -47,4 +47,13 @@ public func routes(_ router: Router) throws
     }
     
     router.get("date", use: dateClosure)
+    
+    let timeZonesClosure: (Request) -> Array<String> = {
+        
+        _ in
+        
+        return TimeZone.knownTimeZoneIdentifiers
+    }
+    
+    router.get("timezones", use: timeZonesClosure)
 }
