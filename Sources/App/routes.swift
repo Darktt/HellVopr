@@ -30,7 +30,7 @@ public func routes(_ router: Router) throws
         
         _ in
         
-        let timeZone = TimeZone(abbreviation: "GMT+0800")
+        let timeZone = TimeZone(identifier: "Asia/Taipei");
         
         guard let _timeZone = timeZone else {
             
