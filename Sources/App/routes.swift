@@ -2,7 +2,8 @@ import Vapor
 import Foundation
 
 /// Register your application's routes here.
-public func routes(_ router: Router) throws {
+public func routes(_ router: Router) throws
+{
     // Basic "It works" example
     router.get { req in
         return "It works!"
@@ -18,7 +19,7 @@ public func routes(_ router: Router) throws {
         _ in
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-DD HH:mm:SS aa"
+        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:SS aa"
         
         let date = Date()
         
