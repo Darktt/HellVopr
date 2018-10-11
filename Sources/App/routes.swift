@@ -1,5 +1,6 @@
 import Vapor
 import Foundation
+import Redis
 
 /// Register your application's routes here.
 public func routes(_ router: Router) throws
@@ -48,6 +49,7 @@ public func routes(_ router: Router) throws
     
     router.get("date", use: dateClosure)
     
+    // Get timzone.
     let timeZonesClosure: (Request) -> Array<String> = {
         
         _ in
